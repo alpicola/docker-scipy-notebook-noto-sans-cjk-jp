@@ -19,5 +19,5 @@ RUN mkdir /tmp/noto && cd /tmp/noto \
 USER $NB_UID
 
 # Refresh matplotlib's font cache which the parent image added
-RUN rm /home/$NB_USER/.cache/matplotlib/fontList.py3k.cache
+RUN rm -rf /home/$NB_USER/.cache/matplotlib
 RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot"
